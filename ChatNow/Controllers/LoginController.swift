@@ -34,6 +34,7 @@ class LoginController: UIViewController {
         return button
     }()
     
+    // checks to see if registering or loggin in
     @objc func handleLoginRegister() {
         if loginSegmented.selectedSegmentIndex == 0 {
             handleLogin()
@@ -42,6 +43,7 @@ class LoginController: UIViewController {
         }
     }
     
+    // handling the log in
     func handleLogin() {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             print("You don't exist")
@@ -116,6 +118,7 @@ class LoginController: UIViewController {
         return sc
     }()
     
+    // ui change for when they switch from register to login
     @objc func handleLoginChange() {
         let title = loginSegmented.titleForSegment(at: loginSegmented.selectedSegmentIndex)
         loginRegisterButton.setTitle(title, for: .normal)

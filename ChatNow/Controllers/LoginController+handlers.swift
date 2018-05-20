@@ -12,6 +12,7 @@ import FirebaseStorage
 
 extension LoginController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    // segue into image picker
     @objc func handleImageSelect() {
         let picker = UIImagePickerController()
         
@@ -21,6 +22,7 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
         present(picker, animated: true, completion: nil)
     }
     
+    // picking user profile image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         var selectedImageFromPicker: UIImage?
@@ -40,11 +42,13 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
         
     }
     
+    // in case they cancelled picking an image
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
         print("cancel")
     }
     
+    // registering a new user
     func handleRegister() {
         guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text else {
             print("Form is not valid")
@@ -88,6 +92,7 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
         
     }
     
+    // finally registering with picture
     private func registerUserWithID(uid: String, values: [String: AnyObject]) {
         let ref = Database.database().reference()
         let currentRef = ref.child("users").child(uid)
