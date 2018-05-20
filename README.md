@@ -1,6 +1,6 @@
 # ChatNow
 
-ChatNow is a messaging ios application that can send both messages and pictures.  
+ChatNow is a iOS messaging application that can send both messages and pictures.  
 
 ![alt text](https://github.com/abelee98/ChatNow/blob/master/image/chatnow3.gif)  
 
